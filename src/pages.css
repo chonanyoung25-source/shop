@@ -1,0 +1,1435 @@
+/* ===========================
+   Page Styles — Modern NewTro
+   우드 & 화이트 / 깔끔 모던 + 레트로 포인트
+   =========================== */
+
+/* ========== HOME ========== */
+
+/* ── Hero ── */
+.hero {
+    position: relative;
+    width: 100%;
+    min-height: 130vh;
+    /* 100vh -> 130vh로 확장하여 바닥까지 볼 수 있는 스크롤 공간 확보 */
+    /* 사진이 화면 하단까지 꽉 차도록 확장 */
+    /* 16:9 비율보다 조금 더 컴팩트하게 조정 */
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding-top: 12vh;
+    /* 간판이 위로 올라오므로 텍스트도 소폭 상향 조정 */
+    overflow: hidden;
+}
+
+.hero-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background-image: url('/exterior.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center top;
+    /* 상단 간판부터 시작 */
+    /* 상단 간판 고정 */
+    background-attachment: scroll;
+    /* 스크롤에 따라 사진의 아래쪽이 자연스럽게 올라오도록 변경 */
+    /* 스크롤 시 사진의 아래쪽이 서서히 드러나도록 고정 */
+}
+
+.hero-bg::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    /* 상단을 더 밝고 깨끗하게 처리하여 글자가 배경에 묻히지 않도록 조정 */
+    background: linear-gradient(180deg,
+            rgba(255, 255, 255, 0.9) 0%,
+            rgba(255, 255, 255, 0.4) 15%,
+            rgba(255, 255, 255, 0) 40%,
+            rgba(13, 9, 7, 0.2) 80%,
+            rgba(13, 9, 7, 0.5) 100%);
+    z-index: 1;
+}
+
+.hero-overlay {
+    display: none;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 0 var(--space-xl);
+}
+
+.hero-badge {
+    display: inline-block;
+    padding: 6px 20px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    border: 1px solid rgba(107, 143, 91, 0.35);
+    border-radius: var(--radius-xl);
+    color: var(--sage-light);
+    background: rgba(107, 143, 91, 0.1);
+    margin-bottom: var(--space-2xl);
+    letter-spacing: 0.04em;
+}
+
+.hero-title {
+    margin-bottom: var(--space-lg);
+    color: var(--white);
+}
+
+.hero-line1 {
+    display: block;
+    font-size: 0.45em;
+    font-weight: 400;
+    letter-spacing: 0.3em;
+    opacity: 0.65;
+    color: var(--wood-300);
+    margin-bottom: 10px;
+}
+
+.hero-line2 {
+    display: block;
+    color: var(--white);
+}
+
+.hero-subtitle {
+    font-size: clamp(0.9rem, 2vw, 1.05rem);
+    color: var(--wood-300);
+    margin-bottom: var(--space-2xl);
+    line-height: 1.8;
+}
+
+.hero-cta {
+    display: flex;
+    gap: var(--space-md);
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.hero-cta .btn-gold {
+    background: var(--white);
+    color: var(--wood-800);
+}
+
+.hero-cta .btn-gold:hover {
+    background: var(--white-soft);
+}
+
+.hero-cta .btn-secondary {
+    background: transparent;
+    color: var(--white);
+    border-color: rgba(255, 255, 255, 0.25);
+}
+
+.hero-cta .btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.4);
+}
+
+.hero-scroll-hint {
+    position: absolute;
+    bottom: 36px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.72rem;
+    color: var(--wood-400);
+    opacity: 0.5;
+}
+
+.scroll-arrow {
+    animation: scrollBounce 2s ease-in-out infinite;
+}
+
+@keyframes scrollBounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(6px);
+    }
+}
+
+/* ── 시그니처 메뉴 ── */
+.signature-section {
+    background: var(--white);
+    padding-top: var(--space-xl);
+    /* 간격 최소화 */
+}
+
+.sig-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: var(--space-md);
+    margin-bottom: var(--space-2xl);
+}
+
+.sig-card {
+    background: var(--white);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    border: var(--border-light);
+    transition: all var(--transition-base);
+}
+
+.sig-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--wood-300);
+}
+
+.sig-card-img {
+    position: relative;
+    height: 160px;
+    background: var(--white-muted);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sig-card-img-placeholder {
+    font-size: 3.5rem;
+    filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.08));
+    z-index: 1;
+}
+
+.sig-card-full-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--transition-base);
+}
+
+.sig-card:hover .sig-card-full-img {
+    transform: scale(1.1);
+}
+
+.sig-rank {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 26px;
+    height: 26px;
+    background: var(--wood-800);
+    color: var(--white);
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 0.75rem;
+    border-radius: var(--radius-full);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+}
+
+.sig-card-img .badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 2;
+}
+
+.sig-card-body {
+    padding: var(--space-md) var(--space-lg);
+}
+
+.sig-card-body h3 {
+    margin-bottom: 4px;
+    font-size: 0.95rem;
+}
+
+.sig-card-body p {
+    color: var(--text-secondary);
+    font-size: 0.78rem;
+    line-height: 1.5;
+    margin-bottom: 6px;
+}
+
+.sig-price {
+    font-family: var(--font-display);
+    font-weight: 700;
+    color: var(--wood-600);
+    font-size: 0.95rem;
+}
+
+.sig-cta {
+    text-align: center;
+}
+
+/* ── 나눔 티저 ── */
+.nanum-teaser {
+    padding: var(--space-4xl) 0;
+    background: var(--white-soft);
+    border-top: 1px solid var(--wood-100);
+    border-bottom: 1px solid var(--wood-100);
+}
+
+.nanum-teaser-inner {
+    text-align: center;
+    padding: var(--space-3xl) var(--space-2xl);
+    background: var(--white);
+    border: var(--border-light);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+}
+
+.nanum-teaser-icon {
+    font-size: 2.5rem;
+    margin-bottom: var(--space-md);
+}
+
+/* ── 하단 CTA ── */
+.bottom-cta {
+    padding: var(--space-2xl) 0;
+    background: var(--wood-800);
+    color: var(--white);
+    margin-top: var(--space-4xl);
+}
+
+.bottom-cta .display-md {
+    color: var(--white);
+}
+
+.bottom-cta-inner {
+    text-align: center;
+}
+
+.bottom-cta-btns {
+    display: flex;
+    gap: var(--space-md);
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.bottom-cta .btn-gold {
+    background: var(--white);
+    color: var(--wood-800);
+}
+
+.bottom-cta .btn-secondary {
+    background: transparent;
+    color: var(--white);
+    border-color: rgba(255, 255, 255, 0.4);
+}
+
+.bottom-cta .btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.08);
+}
+
+
+/* ========== ABOUT ========== */
+.about-hero {
+    background: var(--white);
+    border-bottom: 1px solid var(--wood-100);
+    padding: var(--space-6xl) 0;
+    min-height: 100vh;
+    /* 한 페이지 크기로 고정 */
+    display: flex;
+    align-items: center;
+}
+
+.about-brand-card {
+    text-align: center;
+    padding: var(--space-2xl) var(--space-xl);
+    background: var(--white);
+    border: var(--border-light);
+    border-radius: var(--radius-md);
+}
+
+.about-brand-icon {
+    font-size: 2.5rem;
+    margin-bottom: var(--space-md);
+}
+
+.about-brand-card strong {
+    color: var(--wood-700);
+}
+
+/* 어바웃 페이지 타이틀 베너 */
+.about-title-banner {
+    position: relative;
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: var(--wood-900);
+}
+
+.about-banner-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background-image: url('/about_hero_bg.png');
+    background-size: cover;
+    background-position: center 30%;
+    filter: brightness(0.6) contrast(1.1);
+    transform: scale(1.05);
+}
+
+.about-banner-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom,
+            rgba(13, 9, 7, 0.4) 0%,
+            rgba(13, 9, 7, 0.2) 50%,
+            rgba(13, 9, 7, 0.6) 100%);
+    z-index: 1;
+}
+
+.about-banner-content {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+}
+
+/* 히어로 섹션 재구성 (점주 소개) */
+.hero-intro-layout {
+    display: grid;
+    grid-template-columns: 0.5fr 2.5fr;
+    /* 텍스트 카드가 넓게 펼쳐지는 초기 황금 비율 유지 */
+    gap: 8vw;
+    /* 일정한 간격 유지 (비율 변화 최소화) */
+    align-items: center;
+    padding: var(--space-4xl) 0;
+}
+
+.hero-text-side {
+    transform: translateX(12vw);
+    /* 오른쪽 이동 거리를 5vw에서 12vw로 대폭 확대 */
+}
+
+.profile-img-wrap {
+    border-radius: 0;
+    /* 모서리 뾰족하게 */
+    overflow: hidden;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
+    border: 1px solid var(--wood-100);
+    aspect-ratio: auto;
+    /* 고정 비율 해제 (원본 비율 유지) */
+    height: auto;
+    transform: scale(2.8) translateX(-0.5vw) translateY(1.2vh);
+    /* 아래로 이동 폭을 2vh에서 1.2vh로 줄여 살짝 위로 이동 */
+    transform-origin: left center;
+}
+
+.profile-img-wrap img {
+    width: 100%;
+    height: auto;
+    /* 세로 잘림 없이 전체 출력 */
+    object-fit: contain;
+    /* 원본이 잘리지 않도록 설정 */
+    display: block;
+    transition: transform var(--transition-slow);
+}
+
+.profile-img-wrap:hover img {
+    transform: scale(1.05);
+}
+
+.hero-text-side h1 {
+    font-size: clamp(1.4rem, 4.5vw, 2.5rem);
+    line-height: 1.2;
+    margin-bottom: var(--space-md);
+    white-space: nowrap;
+    word-break: keep-all;
+}
+
+.owner-intro-card {
+    padding: var(--space-2xl) var(--space-3xl);
+    /* 세로 길이를 2xl로 한 단계 더 늘려 볼륨감 확보 */
+    background: var(--white);
+    border-radius: 0;
+    /* 모서리 뾰족하게 */
+    border: 1px solid var(--wood-100);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+    position: relative;
+    overflow: hidden;
+    border-left: 6px solid var(--wood-500);
+    width: 100%;
+}
+
+.owner-quote {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    /* 줄 간격을 살짝 좁혀 전체 높이 축소 */
+}
+
+@media (max-width: 1100px) {
+    .hero-text-side h1 {
+        white-space: normal;
+        /* 작은 화면에서는 유동적으로 줄바꿈 허용 */
+    }
+}
+
+@media (max-width: 992px) {
+    .hero-intro-layout {
+        grid-template-columns: 1fr;
+        padding: var(--space-2xl) 0;
+    }
+}
+
+/* 스토리 섹션 재구성 */
+
+/* 점주 인사 */
+.owner-message {
+    max-width: 650px;
+    margin: 0 auto var(--space-3xl);
+    text-align: center;
+    padding: var(--space-2xl);
+    background: var(--white);
+    border-radius: var(--radius-md);
+    border: var(--border-light);
+    border-left: 3px solid var(--wood-500);
+}
+
+.owner-quote-mark {
+    font-family: var(--font-display);
+    font-size: 3.5rem;
+    line-height: 1;
+    color: var(--wood-200);
+}
+
+.owner-quote {
+    font-family: var(--font-display);
+    font-size: 0.92rem;
+    line-height: 2;
+    color: var(--text-secondary);
+    font-style: italic;
+    margin: var(--space-sm) 0;
+}
+
+.owner-name {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--wood-600);
+}
+
+/* 타임라인 섹션 (한 페이지 크기로 통일) */
+.about-timeline-section {
+    background: var(--white);
+    border-top: 1px solid var(--wood-200);
+    /* 가이드 선을 더 명확하게 강화 */
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: var(--space-6xl) 0;
+}
+
+.about-timeline {
+    max-width: 850px;
+    margin: 0 auto;
+    position: relative;
+    padding-left: 240px;
+}
+
+.about-timeline::before {
+    content: '';
+    position: absolute;
+    left: 200px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: var(--wood-200);
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: var(--space-4xl);
+    /* 기존 2xl에서 4xl로 확장 */
+}
+
+.timeline-dot {
+    position: absolute;
+    left: -48px;
+    /* 240px padding - 200px line offset = 40px base. Dot is 16px, center at -48px */
+    top: 24px;
+    width: 16px;
+    height: 16px;
+    border-radius: var(--radius-full);
+    background: var(--wood-400);
+    border: 3.5px solid var(--white);
+    box-shadow: var(--shadow-sm);
+    z-index: 2;
+}
+
+.timeline-dot.dot-gold {
+    background: var(--gold);
+}
+
+.timeline-dot.dot-sage {
+    background: var(--sage);
+}
+
+.timeline-content {
+    padding: var(--space-xl) var(--space-2xl);
+    background: var(--white);
+    border-radius: 4px;
+    border: 1.5px solid var(--wood-200);
+    /* 테두리를 조금 더 진하고 두껍게 */
+    transition: all var(--transition-base);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+}
+
+.timeline-content:hover {
+    border-color: var(--wood-300);
+    box-shadow: var(--shadow-sm);
+}
+
+.timeline-date {
+    position: absolute;
+    left: -240px;
+    top: 22px;
+    width: 210px;
+    text-align: right;
+    font-size: 1rem;
+    font-weight: 800;
+    color: var(--wood-700);
+    letter-spacing: -0.01em;
+    padding-right: 35px;
+    line-height: 1.3;
+}
+
+.timeline-content h3 {
+    margin-bottom: 8px;
+    font-size: 1.25rem;
+}
+
+.timeline-content p {
+    color: var(--text-secondary);
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* 나눔 섹션 재구성 */
+.about-nanum-section {
+    background: var(--white-soft);
+    padding: var(--space-6xl) 0;
+    min-height: 100vh;
+    /* 사장님 한마디 섹션과 동일한 높이 부여 */
+    display: flex;
+    align-items: center;
+    border-top: 1px solid var(--wood-200);
+    /* 가이드 선을 더 명확하게 강화 */
+}
+
+.nanum-layout {
+    display: grid;
+    grid-template-columns: 0.5fr 2.5fr;
+    /* 사장님 한마디 섹션과 동일한 레이아웃 비율 */
+    gap: 8vw;
+    /* 간격 통일 */
+    align-items: center;
+    width: 100%;
+}
+
+.nanum-content-side {
+    transform: translateX(12vw);
+    /* 우측 이동 거리 통일 (12vw) */
+}
+
+.nanum-img-side {
+    position: relative;
+    /* 추가 위치 조정을 위해 */
+}
+
+.nanum-img-frame {
+    border-radius: 0;
+    /* 모서리 뾰족하게 */
+    overflow: hidden;
+    box-shadow: 20px 20px 60px rgba(0, 0, 0, 0.05);
+    transform: translateX(-6vw) translateY(4.5vh) scale(3.8);
+    /* 이미지 좌측 폭을 -5vw에서 -6vw로 아주 살짝 더 이동 */
+    transform-origin: left center;
+}
+
+.nanum-img-frame img {
+    width: 100%;
+    height: auto;
+    border-radius: 0;
+    /* 모서리 뾰족하게 */
+    display: block;
+}
+
+.nanum-story-card {
+    padding: var(--space-2xl) var(--space-3xl);
+    /* 사장님 카드와 동일하게 세로 높이 추가 확장 */
+    background: var(--white);
+    border-radius: 0;
+    /* 모서리 뾰족하게 */
+    border: 1px solid var(--wood-100);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+    position: relative;
+    overflow: hidden;
+    border-left: 6px solid var(--wood-500);
+    /* 색상 및 두께 통일 */
+    width: 100%;
+}
+
+.nanum-story-card p.body-lg {
+    line-height: 1.8;
+}
+
+.nanum-story-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xl);
+    margin-bottom: var(--space-3xl);
+}
+
+.nanum-story-item {
+    display: flex;
+    gap: var(--space-lg);
+    padding: var(--space-md);
+    background: var(--white);
+    border-radius: var(--radius-sm);
+    border: 1px solid transparent;
+    transition: all var(--transition-base);
+}
+
+.nanum-story-item:hover {
+    border-color: var(--wood-100);
+    transform: translateX(10px);
+}
+
+.nanum-story-text p {
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+.nanum-stats-mini {
+    display: flex;
+    gap: var(--space-3xl);
+    padding: var(--space-xl);
+    background: var(--white);
+    border-radius: var(--radius-md);
+    border: var(--border-light);
+    width: fit-content;
+}
+
+.stat-num {
+    font-family: var(--font-display);
+    font-size: 2.2rem;
+    font-weight: 900;
+    color: var(--wood-700);
+}
+
+.stat-lab {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    font-weight: 600;
+}
+
+@media (max-width: 992px) {
+    .nanum-layout {
+        grid-template-columns: 1fr;
+        gap: var(--space-3xl);
+    }
+
+    .nanum-content-side {
+        padding-left: 0;
+    }
+}
+
+/* 이벤트 */
+.event-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-md);
+}
+
+.event-card {
+    padding: var(--space-lg);
+    background: var(--white);
+    border: var(--border-light);
+}
+
+.event-card-header {
+    margin-bottom: var(--space-sm);
+}
+
+.event-card h3 {
+    margin-bottom: 6px;
+    font-size: 1rem;
+}
+
+.event-period {
+    display: inline-block;
+    margin-top: var(--space-md);
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    padding: 3px 10px;
+    background: var(--white-soft);
+    border: var(--border-light);
+    border-radius: var(--radius-xs);
+}
+
+
+/* ========== MENU ========== */
+.menu-hero {
+    position: relative;
+    height: 70vh;
+    /* 배너 형태의 적절한 높이 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: var(--wood-800);
+}
+
+.menu-hero-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background-image: url('/menu_hero.png');
+    background-size: cover;
+    background-position: center 50%;
+    /* 사진의 중심부(요리)를 집중적으로 보여주어 상단의 하얀 여백을 줄임 */
+    filter: brightness(0.7);
+    /* 텍스트 가독성을 유지하면서 음식의 색감은 살림 */
+}
+
+.hero-content-box {
+    position: relative;
+    z-index: 10;
+}
+
+.menu-tabs-wrap {
+    position: sticky;
+    top: var(--nav-height);
+    z-index: 100;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    padding: var(--space-sm) 0;
+    border-bottom: 1px solid var(--wood-100);
+}
+
+.menu-tabs {
+    display: flex;
+    gap: 6px;
+    overflow-x: auto;
+    padding: 4px;
+    scrollbar-width: none;
+}
+
+.menu-tabs::-webkit-scrollbar {
+    display: none;
+}
+
+.menu-tab {
+    flex-shrink: 0;
+    padding: 12px 24px;
+    font-size: 1.1rem;
+    /* 0.82rem -> 1.1rem */
+    font-weight: 600;
+    color: var(--text-muted);
+    background: transparent;
+    border: 2px solid transparent;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    white-space: nowrap;
+}
+
+.menu-tab:hover {
+    color: var(--text-body);
+}
+
+.menu-tab.active {
+    color: var(--wood-800);
+    background: var(--white);
+    border-color: var(--wood-200);
+    box-shadow: var(--shadow-xs);
+}
+
+/* 메뉴 그리드 */
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    /* 최소 크기 260px -> 300px로 확장 */
+    gap: var(--space-lg);
+}
+
+.menu-card {
+    border-radius: var(--radius-md);
+    background: var(--white);
+    border: var(--border-light);
+}
+
+.menu-card-img {
+    position: relative;
+    height: 280px;
+    /* 이미지 영역 높이 180px -> 280px로 대폭 확장 */
+    background: var(--white-muted);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.menu-card-full-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--transition-base);
+}
+
+.menu-card:hover .menu-card-full-img {
+    transform: scale(1.08);
+}
+
+.menu-card-placeholder {
+    font-size: 3.5rem;
+    filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.06));
+    transition: transform var(--transition-spring);
+    z-index: 1;
+}
+
+.menu-card:hover .menu-card-placeholder {
+    transform: scale(1.1) rotate(-3deg);
+}
+
+.menu-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 2;
+}
+
+.menu-badge-rain {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 2;
+}
+
+.menu-card-body {
+    padding: var(--space-md) var(--space-lg);
+}
+
+.menu-card-name {
+    margin-bottom: 3px;
+}
+
+.menu-card-desc {
+    color: var(--text-secondary);
+    margin-bottom: var(--space-md);
+    line-height: 1.55;
+    font-size: 0.82rem;
+}
+
+.menu-card-footer {
+    display: flex;
+    align-items: center;
+}
+
+.menu-card-price {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 1.05rem;
+    color: var(--wood-700);
+}
+
+
+/* ========== RESERVATION ========== */
+.page-reservation {
+    background: var(--white-soft);
+}
+
+.res-hero {
+    position: relative;
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: var(--wood-800);
+}
+
+.res-hero-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background-image: url('/res_hero_bg.png');
+    background-size: cover;
+    background-position: center;
+    filter: brightness(0.65);
+}
+
+.res-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-2xl);
+    align-items: start;
+}
+
+.res-map {
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    aspect-ratio: 4/3;
+    border: 1.5px solid var(--wood-800);
+}
+
+.res-map-placeholder {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-sm);
+    background: var(--white-muted);
+    border: var(--border-light);
+    border-radius: var(--radius-md);
+}
+
+.map-icon {
+    font-size: 2.5rem;
+    animation: mapPulse 2.5s ease-in-out infinite;
+}
+
+@keyframes mapPulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.08);
+    }
+}
+
+.res-map-placeholder p {
+    font-family: var(--font-display);
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.res-info {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+}
+
+.res-info-card {
+    display: flex;
+    align-items: center;
+    /* Center vertically since icons are gone */
+    gap: var(--space-md);
+    padding: var(--space-md) var(--space-lg);
+    background: var(--white);
+    border: 1.5px solid var(--wood-800);
+    border-radius: var(--radius-sm);
+    transition: all var(--transition-base);
+}
+
+.res-info-card:hover {
+    border-color: var(--wood-300);
+    box-shadow: var(--shadow-sm);
+}
+
+.res-info-card h3 {
+    margin-bottom: 2px;
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+.res-info-card p {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.55;
+}
+
+/* ========== ANALYTICS CHART (New Design) ========== */
+:root {
+    --mint-bar: var(--wood-500);
+    --blue-line: var(--gold);
+    --chart-bg: #F8F9FD;
+}
+
+.crowd-analytics {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: var(--space-2xl);
+    background: var(--white);
+    border: 1.5px solid var(--wood-800);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-lg);
+}
+
+.analytics-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--space-2xl);
+}
+
+.analytics-title {
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+    color: var(--text-dark);
+}
+
+.analytics-legend {
+    display: flex;
+    gap: var(--space-md);
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 2px;
+}
+
+.bar-dot {
+    background: var(--mint-bar);
+}
+
+.line-dot {
+    background: var(--blue-line);
+}
+
+.chart-container {
+    display: flex;
+    gap: var(--space-md);
+    height: 320px;
+    position: relative;
+    padding-top: 60px;
+    /* Space for callouts */
+}
+
+.chart-y-axis {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 200px;
+    color: #A0AEC0;
+    font-size: 0.75rem;
+    text-align: right;
+    width: 40px;
+    padding-bottom: 25px;
+    /* Alignment with chart grid */
+}
+
+.chart-main {
+    flex: 1;
+    height: 200px;
+    position: relative;
+}
+
+.chart-grid {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.chart-grid span {
+    width: 100%;
+    height: 1px;
+    background: #EDF2F7;
+}
+
+.chart-bars {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    height: 100%;
+    z-index: 10;
+}
+
+.chart-col {
+    position: relative;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    width: 10%;
+}
+
+.chart-bar {
+    width: 35%;
+    background: var(--mint-bar);
+    border-radius: 4px 4px 0 0;
+    transition: all 0.5s ease;
+}
+
+.chart-label {
+    position: absolute;
+    bottom: -30px;
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    white-space: nowrap;
+}
+
+.chart-callout {
+    position: absolute;
+    top: -50px;
+    background: white;
+    border: 1px solid #E2E8F0;
+    border-radius: 8px;
+    padding: 6px 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    opacity: 0.95;
+    z-index: 20;
+    white-space: nowrap;
+    min-width: 70px;
+    transition: transform 0.3s ease;
+}
+
+.chart-callout::after {
+    content: '';
+    position: absolute;
+    bottom: -6px;
+    left: 50%;
+    transform: translateX(-50%) rotate(45deg);
+    width: 10px;
+    height: 10px;
+    background: white;
+    border-right: 1px solid #E2E8F0;
+    border-bottom: 1px solid #E2E8F0;
+}
+
+.callout-value {
+    font-weight: 800;
+    color: #2D3748;
+    font-size: 0.9rem;
+}
+
+.callout-tag {
+    font-size: 0.65rem;
+    font-weight: 600;
+    color: #718096;
+}
+
+.chart-line-svg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 15;
+    pointer-events: none;
+    overflow: visible;
+}
+
+.chart-col.is-now .chart-bar {
+    background: var(--blue-line);
+}
+
+.chart-col.is-now .chart-callout {
+    background: var(--blue-line);
+    border: none;
+    transform: scale(1.1);
+}
+
+.chart-col.is-now .chart-callout * {
+    color: white;
+}
+
+.chart-col.is-now .chart-callout::after {
+    background: var(--blue-line);
+    border: none;
+}
+
+.crowd-status-footer {
+    display: flex;
+    justify-content: center;
+    padding-top: var(--space-md);
+}
+
+.status-badge {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    padding: 8px 20px;
+    background: var(--wood-50);
+    border-radius: var(--radius-full);
+    font-size: 0.88rem;
+    color: var(--text-body);
+}
+
+.status-badge.low {
+    border: 1px solid var(--sage-light);
+    color: var(--sage);
+}
+
+.status-badge.mid {
+    border: 1px solid var(--gold);
+    color: var(--gold);
+}
+
+.status-badge.high {
+    border: 1px solid var(--accent);
+    color: var(--accent);
+}
+
+.pulse-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: var(--radius-full);
+    background: currentColor;
+    position: relative;
+}
+
+.pulse-dot::after {
+    content: '';
+    position: absolute;
+    inset: -4px;
+    border-radius: inherit;
+    background: currentColor;
+    opacity: 0.4;
+    animation: statusPulse 2s infinite;
+}
+
+@keyframes statusPulse {
+    0% {
+        transform: scale(1);
+        opacity: 0.4;
+    }
+
+    100% {
+        transform: scale(2.5);
+        opacity: 0;
+    }
+}
+
+/* 예약 폼 */
+.res-form-wrap {
+    max-width: 660px;
+    margin: 0 auto;
+}
+
+.res-preorder {
+    padding: var(--space-lg);
+    margin-bottom: var(--space-lg);
+    background: var(--white);
+    border: 1.5px solid var(--wood-800);
+    border-radius: var(--radius-md);
+}
+
+.res-preorder h3 {
+    margin-bottom: var(--space-md);
+}
+
+.res-preorder-list li {
+    padding: 6px 0;
+    border-bottom: var(--border-light);
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
+.res-preorder-total {
+    margin-top: var(--space-md);
+    font-size: 1rem;
+    text-align: right;
+    color: var(--wood-700);
+    font-weight: 600;
+}
+
+.res-form {
+    background: var(--white);
+    padding: var(--space-2xl);
+    border-radius: var(--radius-md);
+    border: 1.5px solid var(--wood-800);
+}
+
+.res-form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 var(--space-xl);
+}
+
+.res-form-grid .form-group:last-child {
+    grid-column: 1 / -1;
+}
+
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 768px) {
+    .sig-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-sm);
+    }
+
+    .sig-card-img {
+        height: 130px;
+    }
+
+    .sig-card-img-placeholder {
+        font-size: 2.8rem;
+    }
+
+    .nanum-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .res-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .res-form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .menu-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-sm);
+    }
+
+    .menu-card-img {
+        height: 130px;
+    }
+
+    .menu-card-placeholder {
+        font-size: 2.8rem;
+    }
+
+    .event-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .sig-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .menu-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-cta {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .bottom-cta-btns {
+        flex-direction: column;
+        align-items: center;
+    }
+}
