@@ -53,7 +53,7 @@ export function renderAboutPage() {
         <div class="nanum-layout">
           <div class="nanum-img-side reveal">
             <div class="nanum-img-frame">
-              <img src="/about_news.jpg" alt="나눔가게 지정 현장">
+              <img src="/about_news.webp" alt="나눔가게 지정 현장">
             </div>
           </div>
           <div class="nanum-content-side">
