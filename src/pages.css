@@ -25,7 +25,7 @@
     position: absolute;
     inset: 0;
     z-index: 0;
-    background-image: url('/exterior.png');
+    background-image: url('/exterior.webp');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center top;
@@ -368,7 +368,7 @@
     position: absolute;
     inset: 0;
     z-index: 0;
-    background-image: url('/about_hero_bg.png');
+    background-image: url('/about_hero_bg.webp');
     background-size: cover;
     background-position: center 30%;
     filter: brightness(0.6) contrast(1.1);
@@ -789,7 +789,7 @@
     position: absolute;
     inset: 0;
     z-index: 0;
-    background-image: url('/menu_hero.png');
+    background-image: url('/menu_hero.webp');
     background-size: cover;
     background-position: center 50%;
     /* 사진의 중심부(요리)를 집중적으로 보여주어 상단의 하얀 여백을 줄임 */
@@ -959,7 +959,7 @@
     position: absolute;
     inset: 0;
     z-index: 0;
-    background-image: url('/res_hero_bg.png');
+    background-image: url('/res_hero_bg.webp');
     background-size: cover;
     background-position: center;
     filter: brightness(0.65);

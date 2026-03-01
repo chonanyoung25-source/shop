@@ -41,7 +41,7 @@ export function renderReservationPage() {
           <div class="res-map-wrap reveal">
             <div class="res-map">
               <div class="res-map-placeholder">
-                <img src="/location_photo.png" alt="정릉우체국점 위치 안내" style="width:100%; height:100%; object-fit:cover;">
+                <img src="/location_photo.webp" alt="정릉우체국점 위치 안내" style="width:100%; height:100%; object-fit:cover;">
               </div>
             </div>
           </div>

@@ -10,7 +10,7 @@ export const menuData = [
         isBest: true,
         isRainPick: false,
         emoji: '🌶️',
-        image: '/gochu_chicken.png'
+        image: '/gochu_chicken.webp'
     },
     {
         id: 2,
@@ -21,7 +21,7 @@ export const menuData = [
         isBest: true,
         isRainPick: false,
         emoji: '🥩',
-        image: '/hanwoo_mulhoe.png'
+        image: '/hanwoo_mulhoe.webp'
     },
     {
         id: 3,
@@ -32,7 +32,7 @@ export const menuData = [
         isBest: true,
         isRainPick: false,
         emoji: '🔥',
-        image: '/pork_ribs.png'
+        image: '/pork_ribs.webp'
     },
     {
         id: 4,
@@ -43,7 +43,7 @@ export const menuData = [
         isBest: true,
         isRainPick: true,
         emoji: '🍲',
-        image: '/chadol_tteokbokki.png'
+        image: '/chadol_tteokbokki.webp'
     },
     {
         id: 5,
@@ -54,7 +54,7 @@ export const menuData = [
         isBest: true,
         isRainPick: true,
         emoji: '🐚',
-        image: '/jogaetang.png'
+        image: '/jogaetang.webp'
     },
 
     // === 치킨/구이류 ===
@@ -67,7 +67,7 @@ export const menuData = [
         isBest: false,
         isRainPick: false,
         emoji: '🍗',
-        image: '/obong_padak.png'
+        image: '/obong_padak.webp'
     },
     {
         id: 7,
@@ -78,7 +78,7 @@ export const menuData = [
         isBest: false,
         isRainPick: false,
         emoji: '🧅',
-        image: '/onion_chicken.png'
+        image: '/onion_chicken.webp'
     },
     {
         id: 8,
@@ -89,7 +89,7 @@ export const menuData = [
         isBest: false,
         isRainPick: false,
         emoji: '🥘',
-        image: '/gochujang_bulgogi.png'
+        image: '/gochujang_bulgogi.webp'
     },
     {
         id: 11,
@@ -100,7 +100,7 @@ export const menuData = [
         isBest: false,
         isRainPick: true,
         emoji: '🥓',
-        image: '/tofu_kimchi.png'
+        image: '/tofu_kimchi.webp'
     },
     {
         id: 9,
@@ -111,7 +111,7 @@ export const menuData = [
         isBest: false,
         isRainPick: false,
         emoji: '🧂',
-        image: '/dakgalbi_salt.png'
+        image: '/dakgalbi_salt.webp'
     },
     {
         id: 10,
@@ -122,7 +122,7 @@ export const menuData = [
         isBest: false,
         isRainPick: false,
         emoji: '🔥',
-        image: '/dakgalbi_spicy.png'
+        image: '/dakgalbi_spicy.webp'
     },
     {
         id: 12,
@@ -133,7 +133,7 @@ export const menuData = [
         isBest: false,
         isRainPick: false,
         emoji: '🫕',
-        image: '/pork_skin.png'
+        image: '/pork_skin.webp'
     },
     {
         id: 13,
@@ -144,7 +144,7 @@ export const menuData = [
         isBest: false,
         isRainPick: false,
         emoji: '🦶',
-        image: '/dakbal.png'
+        image: '/dakbal.webp'
     },
 
     // === 회/해산물 ===
@@ -157,7 +157,7 @@ export const menuData = [
         isBest: false,
         isRainPick: false,
         emoji: '🥩',
-        image: '/hanwoo_yukhoe.png'
+        image: '/hanwoo_yukhoe.webp'
     },
     {
         id: 15,
@@ -168,7 +168,7 @@ export const menuData = [
         isBest: false,
         isRainPick: false,
         emoji: '🦑',
-        image: '/squid_sukhoe.png'
+        image: '/squid_sukhoe.webp'
     },
     {
         id: 16,
@@ -179,7 +179,7 @@ export const menuData = [
         isBest: false,
         isRainPick: true,
         emoji: '🍤',
-        image: '/squid_mouth_fried.png'
+        image: '/squid_mouth_fried.webp'
     },
     {
         id: 17,
@@ -190,7 +190,7 @@ export const menuData = [
         isBest: false,
         isRainPick: false,
         emoji: '🐚',
-        image: '/komak.png'
+        image: '/komak.webp'
     },
     {
         id: 18,
@@ -201,7 +201,7 @@ export const menuData = [
         isBest: false,
         isRainPick: true,
         emoji: '🐌',
-        image: '/golbaeng-i.png'
+        image: '/golbaeng-i.webp'
     },
 
     // === 탕/찌개 ===
@@ -214,7 +214,7 @@ export const menuData = [
         isBest: false,
         isRainPick: true,
         emoji: '🍢',
-        image: '/odentang.png'
+        image: '/odentang.webp'
     },
     {
         id: 20,
@@ -225,7 +225,7 @@ export const menuData = [
         isBest: false,
         isRainPick: true,
         emoji: '🌶️',
-        image: '/jjambbong.png'
+        image: '/jjambbong.webp'
     },
 
     // === 사이드/기타 ===
@@ -238,7 +238,7 @@ export const menuData = [
         isBest: false,
         isRainPick: false,
         emoji: '🍅',
-        image: '/honey_tomato.png'
+        image: '/honey_tomato.webp'
     }
 ];
 

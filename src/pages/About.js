@@ -23,7 +23,7 @@ export function renderAboutPage() {
         <div class="hero-intro-layout">
           <div class="hero-profile-side reveal">
             <div class="profile-img-wrap">
-              <img src="/about_exterior.png" alt="정릉우체국점 사장님">
+              <img src="/about_exterior.webp" alt="정릉우체국점 사장님">
             </div>
           </div>
           <div class="hero-text-side">
